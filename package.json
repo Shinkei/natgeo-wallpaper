@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Script to change the wallpapers daily with the natgeo photo of the day",
   "main": "index.js",
+  "bin":{
+    "natgeo-wallpaper": "./bin/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

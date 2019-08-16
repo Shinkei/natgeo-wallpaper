@@ -1,6 +1,6 @@
 {
   "name": "natgeo-wallpaper",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Script to change the wallpapers daily with the natgeo photo of the day",
   "main": "index.js",
   "scripts": {

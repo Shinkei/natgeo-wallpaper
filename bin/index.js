@@ -11,15 +11,15 @@ const natgeoUrl = 'https://www.nationalgeographic.com/photography/photo-of-the-d
 const setWallpaper = async () => {
   try{
     const natgeoJson = await axios.get(natgeoUrl)
-    const imageURL = natgeoJson.data.items[0].sizes['2048']
-    // console.log(imageURL)
+    const imageURL = natgeoJson.data.items[0].sizes ?  natgeoJson.data.items[0].sizes['2048']
+      : natgeoJson.data.items[0].image.uri
     const fileWriter = fs.createWriteStream(imagePath)
 
     const image = await axios({ url: imageURL, method: 'GET', responseType: 'stream' })
     image.data.pipe(fileWriter)
 
     await wallpaper.set(imagePath)
-    console.log('enjoy your wallpaper')
+    console.log('enjoy your wallpaper 🖼')
   } catch(e){
     console.log(e)
   }
